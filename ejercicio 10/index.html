@@ -57,6 +57,7 @@ para que modifiquen el input agregando su valor.
         <button class="btn" type="button" name="button">-</button>
         <button class="btn" type="button" name="button">/</button>
         <button class="btn" type="button" name="button">*</button>
+        <button class="btn" type="button" name="button">⇦</button>
         <button class="result" type="button" name="result">=</button>
       </div>
     </div>
@@ -66,77 +67,26 @@ para que modifiquen el input agregando su valor.
       var result = document.getElementsByName("result")[0];
       var calculator = document.getElementsByName("calculator")[0];
 
-      var uno = document.getElementsByName("button")[0];
-      var num1 = parseInt(uno.innerText);
-      var dos = document.getElementsByName("button")[1];
-      var num2 = parseInt(dos.innerText);
-      var tres = document.getElementsByName("button")[2];
-      var num3 = parseInt(tres.innerText);
-      var cuatro = document.getElementsByName("button")[3];
-      var num4 = parseInt(cuatro.innerText);
-      var cinco = document.getElementsByName("button")[4];
-      var num5 = parseInt(cinco.innerText);
-      var seis = document.getElementsByName("button")[5];
-      var num6 = parseInt(seis.innerText);
-      var siete = document.getElementsByName("button")[6];
-      var num7 = parseInt(siete.innerText);
-      var ocho = document.getElementsByName("button")[7];
-      var num8 = parseInt(ocho.innerText);
-      var nueve = document.getElementsByName("button")[8];
-      var num9 = parseInt(nueve.innerText);
-      var suma = document.getElementsByName("button")[9];
-      var suma1 = suma.innerText;
-      var resta = document.getElementsByName("button")[10];
-      var resta1 = resta.innerText;
-      var division = document.getElementsByName("button")[11];
-      var division1 = division.innerText;
-      var multiplicacion = document.getElementsByName("button")[12];
-      var multiplicacion1 = multiplicacion.innerText;
-
-
-    uno.onclick = function(){
-        calculator.value+= num1;
+      function botones(x) {
+        var boton=document.getElementsByName("button")[x];
+        var texto= boton.innerText;
+        boton.onclick = function(){
+              calculator.value+= texto;
+            }
+        if(texto=="⇦"){
+          boton.onclick = function(){
+              calculator.value= " ";
+            }
+        }
       }
-    dos.onclick = function(){
-          calculator.value+= num2;
-      }  
-    tres.onclick = function(){
-        calculator.value+= num3;
+
+      for (var i=0; i<14; i++) {
+        botones(i);
       }
-    cuatro.onclick = function(){
-          calculator.value+= num4;
-      } 
-    cinco.onclick = function(){
-          calculator.value+= num5;
-      } 
-    seis.onclick = function(){
-          calculator.value+= num6;
-      } 
-    siete.onclick = function(){
-          calculator.value+= num7;
-      } 
-    ocho.onclick = function(){
-          calculator.value+= num8;
-      } 
-    nueve.onclick = function(){
-       calculator.value+= num9;
-    } 
-    suma.onclick = function(){
-       calculator.value+= suma1;
-    } 
-    resta.onclick = function(){
-       calculator.value+= resta1;
-    } 
-    division.onclick = function(){
-       calculator.value+= division1;
-    } 
-    multiplicacion.onclick = function(){
-       calculator.value+= multiplicacion1;
-    } 
-    result.onclick = function(){
+
+      result.onclick = function(){
       calculator.value = eval(calculator.value)
     }
-
 
     </script>
   </body>
