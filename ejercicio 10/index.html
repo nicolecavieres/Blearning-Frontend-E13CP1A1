@@ -12,17 +12,132 @@ para que modifiquen el input agregando su valor.
     <meta charset="utf-8">
     <title></title>
   </head>
+  <style type="text/css">
+    .btn, .result{
+      float:left;
+      font-size: 20px;
+      width:50px;
+      height: 50px;
+      margin:10px 16px;
+      box-sizing: border-box;
+
+    }
+    .numeros{
+      width: 250px;
+      margin: 0 auto;
+      height: 300px;
+      text-align: center;
+    }
+    .calculadora{
+      width: 250px;
+      border: solid silver 1px;
+      margin: 0 auto;
+      height: 430px;
+    }
+    input{
+      margin: 5%;
+      width: 90%;
+      font-size: 30px;
+    }
+   </style>
   <body>
-    <input type="text" name="calculator" value="">
-    <button class="btn" type="button" name="button">1</button>
-    <button class="btn" type="button" name="button">+</button>
-    <button class="result" type="button" name="result">=</button>
+    <div class="calculadora">
+      <input type="text" name="calculator" value="">
+      <div class="numeros">
+        <button class="btn" type="button" name="button">1</button>
+        <button class="btn" type="button" name="button">2</button>
+        <button class="btn" type="button" name="button">3</button>
+        <button class="btn" type="button" name="button">4</button>
+        <button class="btn" type="button" name="button">5</button>
+        <button class="btn" type="button" name="button">6</button>
+        <button class="btn" type="button" name="button">7</button>
+        <button class="btn" type="button" name="button">8</button>
+        <button class="btn" type="button" name="button">9</button>
+        <button class="btn" type="button" name="button">+</button>
+        <button class="btn" type="button" name="button">-</button>
+        <button class="btn" type="button" name="button">/</button>
+        <button class="btn" type="button" name="button">*</button>
+        <button class="result" type="button" name="result">=</button>
+      </div>
+    </div>
     <script type="text/javascript">
+
+
       var result = document.getElementsByName("result")[0];
       var calculator = document.getElementsByName("calculator")[0];
-      result.onclick = function(){
-        calculator.value = eval(calculator.value)
+
+      var uno = document.getElementsByName("button")[0];
+      var num1 = parseInt(uno.innerText);
+      var dos = document.getElementsByName("button")[1];
+      var num2 = parseInt(dos.innerText);
+      var tres = document.getElementsByName("button")[2];
+      var num3 = parseInt(tres.innerText);
+      var cuatro = document.getElementsByName("button")[3];
+      var num4 = parseInt(cuatro.innerText);
+      var cinco = document.getElementsByName("button")[4];
+      var num5 = parseInt(cinco.innerText);
+      var seis = document.getElementsByName("button")[5];
+      var num6 = parseInt(seis.innerText);
+      var siete = document.getElementsByName("button")[6];
+      var num7 = parseInt(siete.innerText);
+      var ocho = document.getElementsByName("button")[7];
+      var num8 = parseInt(ocho.innerText);
+      var nueve = document.getElementsByName("button")[8];
+      var num9 = parseInt(nueve.innerText);
+      var suma = document.getElementsByName("button")[9];
+      var suma1 = suma.innerText;
+      var resta = document.getElementsByName("button")[10];
+      var resta1 = resta.innerText;
+      var division = document.getElementsByName("button")[11];
+      var division1 = division.innerText;
+      var multiplicacion = document.getElementsByName("button")[12];
+      var multiplicacion1 = multiplicacion.innerText;
+
+
+    uno.onclick = function(){
+        calculator.value+= num1;
       }
+    dos.onclick = function(){
+          calculator.value+= num2;
+      }  
+    tres.onclick = function(){
+        calculator.value+= num3;
+      }
+    cuatro.onclick = function(){
+          calculator.value+= num4;
+      } 
+    cinco.onclick = function(){
+          calculator.value+= num5;
+      } 
+    seis.onclick = function(){
+          calculator.value+= num6;
+      } 
+    siete.onclick = function(){
+          calculator.value+= num7;
+      } 
+    ocho.onclick = function(){
+          calculator.value+= num8;
+      } 
+    nueve.onclick = function(){
+       calculator.value+= num9;
+    } 
+    suma.onclick = function(){
+       calculator.value+= suma1;
+    } 
+    resta.onclick = function(){
+       calculator.value+= resta1;
+    } 
+    division.onclick = function(){
+       calculator.value+= division1;
+    } 
+    multiplicacion.onclick = function(){
+       calculator.value+= multiplicacion1;
+    } 
+    result.onclick = function(){
+      calculator.value = eval(calculator.value)
+    }
+
+
     </script>
   </body>
 </html>
